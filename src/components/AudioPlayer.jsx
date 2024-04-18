@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { tracks } from "../data/tracks";
 
 // import components
@@ -6,14 +6,18 @@ import DisplayTrack from "./DisplayTrack";
 import Controls from "./Controls";
 import ProgressBar from "./ProgressBar";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ selectedTrack }) => {
 	const [trackIndex, setTrackIndex] = useState(0);
-	const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
+	const [currentTrack, setCurrentTrack] = useState(selectedTrack);
 	const [timeProgress, setTimeProgress] = useState(0);
 	const [duration, setDuration] = useState(0);
 
 	const audioRef = useRef();
 	const progressBarRef = useRef();
+
+	useEffect(() => {
+		setCurrentTrack(selectedTrack);
+	}, [selectedTrack]);
 
 	const handleNext = () => {
 		if (trackIndex >= tracks.length - 1) {
@@ -26,7 +30,7 @@ const AudioPlayer = () => {
 	};
 
 	return (
-		<div className="audio-player bg-black text-white absolute bottom-0 w-screen">
+		<div className="audio-player bg-orange-300 text-black fixed bottom-0 w-screen">
 			<div className="inner">
 				<ProgressBar
 					{...{ progressBarRef, timeProgress, duration, audioRef }}

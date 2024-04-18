@@ -22,22 +22,11 @@ const DisplayTrack = ({
 				onEnded={handleNext}
 			/>
 			<div className="audio-info">
-				{/* <div className="audio-image">
-					{currentTrack.thumbnail ? (
-						<img src={currentTrack.thumbnail} alt="audio avatar" />
-					) : (
-						<div className="icon-wrapper">
-							<span className="audio-icon">
-								<BsMusicNoteBeamed />
-							</span>
-						</div>
-					)}
-				</div> */}
 				<div className="text">
-					<p className="title text-center text-xl">
+					<p className="title text-center font-bold text-xl">
 						Name of the song: {currentTrack.title}
 					</p>
-					{/* <p>{currentTrack.author}</p> */}
+					{/* <p className="text-center">{currentTrack.author}</p> */}
 				</div>
 			</div>
 		</div>
