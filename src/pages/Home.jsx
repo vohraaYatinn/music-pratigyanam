@@ -18,9 +18,9 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="border-b text-center border-gray-400">
+			<div className="border-b text-center border-black">
 				<div className="flex gap-5 justify-between my-5 mx-3 items-center rounded-xl px-2 ">
-					<div className="border-4 border-red-500 rounded-full">
+					<div className="border-4 border-orange-500 rounded-full">
 						<img src={vector} alt="" className=" w-16 rounded-full" />
 					</div>
 					<div className="w-full">
@@ -32,7 +32,7 @@ const Home = () => {
 					<input
 						type="text"
 						placeholder="Search song"
-						className="outline-none w-full"
+						className="outline-none bg-transparent w-full placeholder:text-black"
 					/>
 					<div className="text-3xl">
 						<IoMdSearch />

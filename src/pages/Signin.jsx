@@ -14,7 +14,7 @@ const Signin = () => {
 	};
 
 	return (
-		<div>
+		<div className="h-screen bg-white">
 			<section className="bg-gray-50">
 				<div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 					<div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 ">
@@ -60,7 +60,7 @@ const Signin = () => {
 								<button
 									type="submit"
 									onClick={handleSignIn}
-									className="w-full  text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+									className="w-full  text-white bg-gradient-to-r from-orange-500 to-yellow-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
 									Sign In
 								</button>
 								<p className="text-sm font-light text-gray-500 ">

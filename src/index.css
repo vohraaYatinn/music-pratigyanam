@@ -6,6 +6,8 @@
 
 body {
 	font-family: "Poppins", sans-serif;
+	background-image: linear-gradient(to right, #f59e0b, #fcc419);
+	color: black;
 }
 
 ::-webkit-slider-thumb {

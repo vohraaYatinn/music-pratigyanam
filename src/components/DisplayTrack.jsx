@@ -14,7 +14,7 @@ const DisplayTrack = ({
 	};
 
 	return (
-		<div>
+		<div className="text-black">
 			<audio
 				src={currentTrack.src}
 				ref={audioRef}
