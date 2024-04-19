@@ -30,7 +30,7 @@ const AudioPlayer = ({ selectedTrack }) => {
 	};
 
 	return (
-		<div className="audio-player bg-orange-300 text-black fixed bottom-0 w-screen">
+		<div className="audio-player bg-gradient-to-r from-orange-500 to-yellow-500 text-white fixed bottom-0 w-screen">
 			<div className="inner">
 				<ProgressBar
 					{...{ progressBarRef, timeProgress, duration, audioRef }}

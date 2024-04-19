@@ -24,9 +24,8 @@ const DisplayTrack = ({
 			<div className="audio-info">
 				<div className="text">
 					<p className="title text-center font-bold text-xl">
-						Name of the song: {currentTrack.title}
+						{currentTrack.title} by {currentTrack.author}{" "}
 					</p>
-					{/* <p className="text-center">{currentTrack.author}</p> */}
 				</div>
 			</div>
 		</div>

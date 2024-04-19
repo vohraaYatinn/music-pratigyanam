@@ -4,6 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 import { tracks } from "../data/tracks";
 import AudioPlayer from "./AudioPlayer";
+import { Link } from "react-router-dom";
 
 const TrackList = () => {
 	const [selectedTrack, setSelectedTrack] = useState(tracks[0]);
@@ -15,8 +16,10 @@ const TrackList = () => {
 	return (
 		<>
 			<div className="bg-orange-50 w-screen">
-				<header className="text-2xl flex items-center justify-between mx-3 py-2">
-					<FaArrowLeft />
+				<header className="text-2xl flex items-center justify-between mx-3 py-3">
+					<Link to={"/home"}>
+						<FaArrowLeft />
+					</Link>
 					<p className="font-bold">Album</p>
 					<BsThreeDotsVertical />
 				</header>

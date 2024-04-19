@@ -141,7 +141,7 @@ const Controls = ({
 						type="range"
 						min={0}
 						max={100}
-						className="h-1 bg-black rounded-lg appearance-none cursor-pointer range-sm "
+						className="h-1 bg-white rounded-lg appearance-none cursor-pointer range-sm "
 						value={volume}
 						onChange={(e) => setVolume(e.target.value)}
 					/>

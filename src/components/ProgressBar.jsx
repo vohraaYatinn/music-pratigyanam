@@ -18,7 +18,7 @@ const ProgressBar = ({ progressBarRef, timeProgress, duration, audioRef }) => {
 		<div className="progress flex gap-2 items-center justify-center py-3 px-5">
 			<span className="time current">{formatTime(timeProgress)}</span>
 			<input
-				className="w-full h-2 bg-black rounded-lg appearance-none cursor-pointer range-sm "
+				className="w-full h-2 bg-white rounded-lg appearance-none cursor-pointer range-sm "
 				type="range"
 				ref={progressBarRef}
 				defaultValue="0"
