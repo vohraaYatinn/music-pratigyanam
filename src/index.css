@@ -6,7 +6,7 @@
 
 body {
 	font-family: "Poppins", sans-serif;
-	background-image: linear-gradient(to right, #f59e0b, #fcc419);
+	background-image: linear-gradient(to right, #ffffff, #ffffff);
 	color: black;
 }
 
@@ -18,4 +18,19 @@ body {
 	height: 20px;
 	background: white;
 	cursor: pointer;
+	color: black;
+}
+.fix-osahan-footer a{
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 1rem;
+color: black;
+opacity: 50%;
+
+}
+.footer-icon{
+	font-size: 1.5rem;
+	color: black;
+
 }
