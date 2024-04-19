@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import Signup from "./pages/Signup.jsx";
 import Signin from "./pages/Signin.jsx";
 import Home from "./pages/Home.jsx";
+import Refer from "./pages/Refer.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
 			{
 				path: "home",
 				element: <Home />,
+			},
+			{
+				path: "refer-and-earn",
+				element: <Refer />,
 			},
 		],
 	},
