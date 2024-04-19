@@ -10,6 +10,8 @@ import Signup from "./pages/Signup.jsx";
 import Signin from "./pages/Signin.jsx";
 import Home from "./pages/Home.jsx";
 import Refer from "./pages/Refer.jsx";
+import Profile from "./pages/Profile.jsx";
+import EditProfile from "./pages/EditProfile.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
 			{
 				path: "refer-and-earn",
 				element: <Refer />,
+			},
+			{
+				path: "profile",
+				element: <Profile />,
+			},
+			{
+				path: "edit-profile",
+				element: <EditProfile />,
 			},
 		],
 	},
