@@ -44,7 +44,7 @@ const TrackList = () => {
 						</button>
 					</div>
 				</section>
-				<section className="mx-3 h-[500px] overflow-scroll pb-40">
+				<section className="mx-3 h-full mb-[140px] overflow-scroll">
 					{tracks.map((item) => {
 						return (
 							<div
