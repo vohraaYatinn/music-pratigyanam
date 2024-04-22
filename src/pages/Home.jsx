@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import vector from "../data/vector.jpeg";
 import image1 from "../data/thumbnails/image1.jpeg";
 import image2 from "../data/thumbnails/image2.jpeg";
@@ -10,9 +10,9 @@ import { Swiper } from 'antd-mobile'
 import { IoMdSearch } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import BottomNav from "../components/BottomNav";
-
 import TopNav from "../components/TopNav";
-
+import OkayModal from "../common-components/OkayModal";
+import { Modal } from 'antd-mobile'
 
 const Home = () => {
 	const navigate = useNavigate();
@@ -21,7 +21,12 @@ const Home = () => {
 	};
 
 	const topDoctor = [image1,image2,image3]
-
+	useEffect(()=>{
+		const toast = localStorage.getItem("toast")
+		if(toast){
+		localStorage.setItem("toast",false)
+		}
+	},[])
 	const topDoctors = topDoctor.map((color, index) => (
         <Swiper.Item key={index}>
          <img
@@ -35,31 +40,6 @@ const Home = () => {
 
 	return (
 		<>
-{/* <div style={{
-	height:"5rem",
-	display:"flex",
-	justifyContent:"space-between",
-	alignItems:"center",
-	background:"white",
-	padding:"0rem 1rem",
-	boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)", // Add box shadow
-
-
-}}>
-	<div style={{display:"flex", alignItems:"center", position:"relative", right:"0.9rem"}}>
-<img src={logo} style={{height:"5rem", objectFit:"cover"}}/>
-
-</div>
-<div className="nav-icons">
-<FaMusic style={{ fontSize: "1.6rem" }} />
-<FaBars style={{fontSize:"1.6rem"}}/>
-</div>
-
-</div> */}
-
-
-
-
 <TopNav path={"home"}/>
 			<div style={{marginTop:"1.6rem"}}>
 			<Swiper slideSize={90} trackOffset={15} loop stuckAtBoundary={false}
@@ -67,7 +47,6 @@ const Home = () => {
             >
           {topDoctors}
         </Swiper>
-				
 				
 			</div>
 			<div className="mt-5 flex items-center justify-between mx-3 mt-3">

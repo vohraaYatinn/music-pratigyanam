@@ -1,7 +1,8 @@
 import React from "react";
-import { FaArrowLeft, FaChevronRight, FaLocationDot } from "react-icons/fa6";
+import { FaArrowLeft, FaChevronRight, FaLocationDot, FaUserCheck } from "react-icons/fa6";
 import {
 	MdDeleteOutline,
+	MdLogout,
 	MdOutlinePayment,
 	MdOutlineSecurity,
 } from "react-icons/md";
@@ -16,8 +17,11 @@ import vector from "../data/vector.jpeg";
 import { Link } from "react-router-dom";
 import { NavBar} from 'antd-mobile'
 import BottomNav from "../components/BottomNav";
+import { useRouter } from "../hooks/navigator";
 
 const Profile = () => {
+	const router = useRouter();
+
 	return (
 		<div className="bg-white text-black pb-10 sm:pb-24">
 
@@ -49,17 +53,22 @@ const Profile = () => {
 						<FaArrowLeft />
 						</div>
 					</Link>
-					<Link to={"/edit-profile"}>
-						<div>
-							<FiEdit />
-						</div>
-					</Link>
+				
 					</div>
 
 				</div>
 				<div className="mt-5">
 					<p className="text-lg ml-4 mt-3">Personal Info</p>
 					<div>
+						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
+							<div className="flex gap-4" onClick={()=>{
+								router.push("/edit-profile")
+							}}>
+								<FaUserCheck />
+								<p>Edit Profile</p>
+							</div>
+							<FaChevronRight />
+						</div>
 						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
 							<div className="flex gap-4">
 								<FaLocationDot />
@@ -70,71 +79,20 @@ const Profile = () => {
 						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
 							<div className="flex gap-4">
 								<MdOutlinePayment />
-								<p>Payment Method</p>
+								<p>Manage Subscription</p>
 							</div>
 							<FaChevronRight />
 						</div>
 					</div>
 				</div>
-				<div className="mt-5">
-					<p className="text-lg ml-4 mt-3">Security</p>
-					<div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<IoLockOpenOutline />
-								<p>Change Password</p>
-							</div>
-							<FaChevronRight />
-						</div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<IoLockClosedOutline />
-								<p>Forget Password</p>
-							</div>
-							<FaChevronRight />
-						</div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<MdOutlineSecurity />
-								<p>Security</p>
-							</div>
-							<FaChevronRight />
-						</div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<MdOutlinePayment />
-								<p>Notifications</p>
-							</div>
-							<FaChevronRight />
-						</div>
-					</div>
-				</div>
+			
 				<div className="mt-5">
 					<p className="text-lg ml-4 mt-3">General </p>
 					<div>
 						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
 							<div className="flex gap-4">
 								<IoLanguage />
-								<p>Language</p>
-							</div>
-							<FaChevronRight />
-						</div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<MdDeleteOutline />
-								<p>Clear Cache</p>
-							</div>
-							<FaChevronRight />
-						</div>
-					</div>
-				</div>
-				<div className="mt-5">
-					<p className="text-lg ml-4 mt-3">About</p>
-					<div>
-						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
-							<div className="flex gap-4">
-								<IoLanguage />
-								<p>Legal & Policies</p>
+								<p>Audio Language</p>
 							</div>
 							<FaChevronRight />
 						</div>
@@ -145,19 +103,20 @@ const Profile = () => {
 							</div>
 							<FaChevronRight />
 						</div>
+					</div>
+				</div>
+				<div className="mt-5">
+					<p className="text-lg ml-4 mt-3">Authentication</p>
+					<div>
 						<div className="flex items-center text-xl gap-5 justify-between mx-4 mt-3 my-2 py-2 ">
 							<div className="flex gap-4">
-								<MdDeleteOutline />
-								<p>Dark Mode</p>
+								<MdLogout />
+								<p>Logout</p>
 							</div>
 							<FaChevronRight />
 						</div>
 					</div>
-					<div className="text-center text-4xl mt-6">
-						<button className="bg-blue-600 text-white px-16 rounded-full py-3">
-							Logout
-						</button>
-					</div>
+		
 				</div>
 			</div>
 			<BottomNav path="edit"/>

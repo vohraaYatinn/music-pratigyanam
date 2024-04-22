@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaArrowLeft, FaChevronRight, FaLocationDot } from "react-icons/fa6";
 import {
 	MdDeleteOutline,
@@ -19,6 +19,8 @@ import BottomNav from "../components/BottomNav";
 import TopNav from "../components/TopNav";
 import { tracksFav } from "../data/tracks";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { Dialog, List, SwipeAction, Toast, Image } from 'antd-mobile'
+
 
 const FavComponent = () => {
 	const [selectedTrack, setSelectedTrack] = useState(tracksFav[0]);
@@ -26,6 +28,8 @@ const FavComponent = () => {
 	const handleTrackClick = (track) => {
 		setSelectedTrack(track);
 	};
+	const ref = useRef(null)
+
 	return (
 		<div className="bg-white text-black pb-10 sm:pb-24">
 
@@ -37,13 +41,30 @@ const FavComponent = () => {
 					<section className="mx-3 h-full mb-[140px] overflow-scroll">
 					{tracksFav.map((item) => {
 						return (
+							<SwipeAction
+							ref={ref}
+							closeOnAction={false}
+							closeOnTouchOutside={false}
+							rightActions={[
+							  {
+								key: 'delete',
+								text: 'Remove',
+								color: 'danger',
+								onClick: async () => {
+								  await Dialog.confirm({
+									content: 'Are you sure?',
+								  })
+								  ref.current?.close()
+								},
+							  },
+							]}
+						  >
 							<div
 								key={item.id}
-								className={`flex gap-5 my-5 items-center rounded-xl px-3 py-2  w-full ${
+								className={`flex gap-5 my-3 items-center rounded-xl px-3 py-2  w-full ${
 									selectedTrack.id === item.id ? "bg-white" : ""
-								}`}
-								onClick={() => handleTrackClick(item)}>
-								<p>{item.id}</p>
+								}`}>
+								
 								<img src={item.img} alt="" className="h-12 rounded-lg  w-12" 
 								style={{
 									objectFit:"cover"
@@ -53,10 +74,10 @@ const FavComponent = () => {
 									<p className="font-bold text-xl text-start">{item.title}</p>
 									<p>{item.time}</p>
 								</div>
-								<p className="text-xl">
-									<BsThreeDotsVertical />
-								</p>
 							</div>
+							  
+						  </SwipeAction>
+							
 						);
 					})}
 				</section>
@@ -64,7 +85,7 @@ const FavComponent = () => {
 		
 			
 			</div>
-			<BottomNav path="edit"/>
+			<BottomNav path="fav"/>
 
 		</div>
 		

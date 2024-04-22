@@ -22,7 +22,7 @@ const BottomNav = ({path}) => {
 }}>
             <Link to="/home" className={`col footer-bottom-nav ${path=="home" && "active"}`}>
             <RiHome2Line className="footer-icon" />
-              <span>Home</span>
+              <span className={path=="home" && "border-radius-bottom"}>Home</span>
             </Link>
             <Link to="/search-doctor" className={`col footer-bottom-nav ${path=="search" && "active"}`}>
             <RiSearchLine className="footer-icon" />
@@ -30,11 +30,11 @@ const BottomNav = ({path}) => {
             </Link>
             <Link to="/fav" className={`col footer-bottom-nav ${path=="fav" && "active"}`}>
             <RiHeartLine className="footer-icon" />
-              <span>Favrouite</span>
+              <span className={path=="fav" && "border-radius-bottom"}>Favrouite</span>
             </Link>
             <Link to="/profile" className={`col footer-bottom-nav ${path=="profile" && "active"}`}>
             <RiAccountCircleLine className="footer-icon" />
-              <span>Profile</span>
+              <span className={path=="edit" && "border-radius-bottom"}>Profile</span>
             </Link>
         </div>
 </>  )

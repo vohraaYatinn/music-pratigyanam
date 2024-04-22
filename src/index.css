@@ -62,3 +62,7 @@ opacity: 50%;
     align-items: center;
     justify-content: center;
 }
+.border-radius-bottom{
+	border-bottom:4px solid black;
+	padding-bottom:4px
+}

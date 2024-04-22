@@ -6,6 +6,7 @@ const Signin = () => {
 	const [password, setPassword] = useState("");
 
 	const navigate = useNavigate();
+	localStorage.setItem("toast",true)
 
 	const handleSignIn = (e) => {
 		e.preventDefault();
