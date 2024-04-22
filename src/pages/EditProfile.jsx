@@ -2,14 +2,13 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import vector from "../data/vector.jpeg";
 import { FaPen } from "react-icons/fa6";
+import TopNav from "../components/TopNav";
 
 const EditProfile = () => {
 	return (
 		<div className="bg-white text-black pb-10">
-			<div className="text-3xl flex justify-start mx-6  py-6">
-				<FaArrowLeft />
-				<p className="w-full text-center">Edit Profile</p>
-			</div>
+									<TopNav path={"Edit Profile"}/>
+
 			<div className="mt-10 text-3xl flex items-end justify-center">
 				<img src={vector} alt="" className=" h-40 mx-auto rounded-full" />
 				<p className="bg-black px-2 py-2 rounded-full text-white">
@@ -84,6 +83,7 @@ const EditProfile = () => {
 				</div>
 			</div>
 		</div>
+		
 	);
 };
 

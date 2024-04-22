@@ -1,5 +1,5 @@
 import React from "react";
-import { FaChevronRight, FaLocationDot } from "react-icons/fa6";
+import { FaArrowLeft, FaChevronRight, FaLocationDot } from "react-icons/fa6";
 import {
 	MdDeleteOutline,
 	MdOutlinePayment,
@@ -14,25 +14,48 @@ import {
 import { FiEdit } from "react-icons/fi";
 import vector from "../data/vector.jpeg";
 import { Link } from "react-router-dom";
+import { NavBar} from 'antd-mobile'
+import BottomNav from "../components/BottomNav";
 
 const Profile = () => {
 	return (
 		<div className="bg-white text-black pb-10 sm:pb-24">
+
 			<div>
-				<div className="flex items-center justify-evenly text-3xl py-8 gap-3">
+				
+				<div className="flex items-center justify-evenly text-3xl py-8 gap-3" style={{
+					flexDirection:"row-reverse"
+				}}>
+			
 					<img src={vector} alt="" className="h-16 w-16 rounded-full" />
 					<div>
 						<p className="font-semibold">Virat Kohli</p>
 						<div className="text-lg flex items-center gap-2">
+
 							<FaLocationDot />
 							<span className="">Uttar Pradesh, India</span>
 						</div>
 					</div>
+					<div style={{
+						gap:"1rem",
+						display:"flex", flexDirection:"column"
+					}}>
+					
+
+					<Link onClick={()=>{
+						history.back()
+					}}>
+						<div>
+						<FaArrowLeft />
+						</div>
+					</Link>
 					<Link to={"/edit-profile"}>
 						<div>
 							<FiEdit />
 						</div>
 					</Link>
+					</div>
+
 				</div>
 				<div className="mt-5">
 					<p className="text-lg ml-4 mt-3">Personal Info</p>
@@ -137,7 +160,10 @@ const Profile = () => {
 					</div>
 				</div>
 			</div>
+			<BottomNav path="edit"/>
+
 		</div>
+		
 	);
 };
 

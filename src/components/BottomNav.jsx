@@ -8,12 +8,13 @@ const BottomNav = ({path}) => {
 <div className="footer mt-auto p-3 fix-osahan-footer" style={{
     height:"5rem",
     margin:"1.4rem",
+    background:"white",
     border:"2px solid transparent",
     borderRadius:"30px",
     display:"flex",
     alignItems:"center",
     justifyContent:"space-around",
-    position:"absolute",
+    position:"fixed",
     bottom:"4rem",
     width:"90%",
     boxShadow: "4px 4px 4px 4px rgba(0, 0, 0, 0.1)"
@@ -27,11 +28,11 @@ const BottomNav = ({path}) => {
             <RiSearchLine className="footer-icon" />
               <span>Search</span>
             </Link>
-            <Link to="/favorite-doctor" className={`col footer-bottom-nav ${path=="fav" && "active"}`}>
+            <Link to="/fav" className={`col footer-bottom-nav ${path=="fav" && "active"}`}>
             <RiHeartLine className="footer-icon" />
               <span>Favrouite</span>
             </Link>
-            <Link to="/customer-profile" className={`col footer-bottom-nav ${path=="profile" && "active"}`}>
+            <Link to="/profile" className={`col footer-bottom-nav ${path=="profile" && "active"}`}>
             <RiAccountCircleLine className="footer-icon" />
               <span>Profile</span>
             </Link>

@@ -34,3 +34,31 @@ opacity: 50%;
 	color: black;
 
 }
+.send-otp-button{
+	margin-top: 2rem !important;
+}
+.otp-boxes{
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.otp-boxes div{
+	border: 1px solid black;
+	width: 15%;
+}
+.otp-boxes div input{
+	width: 100%;
+}
+.nav-icons{
+	display: flex;
+	gap: 1rem;
+	opacity: 90%;
+}
+.common-flex-property{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

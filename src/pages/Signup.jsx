@@ -14,12 +14,12 @@ const Signup = () => {
 		if (password !== confirmPassword) {
 			setError("Passwords do not match");
 		} else {
-			navigate("/signin");
+			navigate("/");
 		}
 	};
 
 	const handleGoogleAuth = () => {
-		navigate("/");
+		navigate("/music");
 	};
 
 	return (
@@ -165,7 +165,7 @@ const Signup = () => {
 								<p className="text-sm font-light text-gray-500 ">
 									Already have an account?{" "}
 									<Link
-										to={"/signin"}
+										to={"/"}
 										className="font-medium text-primary-600 hover:underline ">
 										Login here
 									</Link>

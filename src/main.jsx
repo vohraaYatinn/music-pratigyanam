@@ -12,13 +12,15 @@ import Home from "./pages/Home.jsx";
 import Refer from "./pages/Refer.jsx";
 import Profile from "./pages/Profile.jsx";
 import EditProfile from "./pages/EditProfile.jsx";
+import OtpEnter from "./pages/Otp.jsx";
+import FavComponent from "./pages/Fav.jsx";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		children: [
 			{
-				path: "/",
+				path: "/music",
 				element: <App />,
 			},
 			{
@@ -26,8 +28,12 @@ const router = createBrowserRouter([
 				element: <Signup />,
 			},
 			{
-				path: "signin",
+				path: "/",
 				element: <Signin />,
+			},
+			{
+				path: "/otp",
+				element: <OtpEnter />,
 			},
 			{
 				path: "home",
@@ -44,6 +50,10 @@ const router = createBrowserRouter([
 			{
 				path: "edit-profile",
 				element: <EditProfile />,
+			},
+			{
+				path: "fav",
+				element: <FavComponent />,
 			},
 		],
 	},
